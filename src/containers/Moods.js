@@ -10,7 +10,7 @@ const Moods = ({ count, handleSelection, }) => {
   
   return (
     <>
-      <Controls  handleSelection={handleSelection}/>
+      <Controls handleSelection={handleSelection} />
       <Face emoji={face} />
     </>
   );
