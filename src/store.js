@@ -11,15 +11,16 @@ const initialState = {
 };
 
 function reducer(state = initialState, action) {
+  
   switch(action.type) {
     case 'DRINK_COFFEE':
-      return { ...state.count, coffees: state.count.coffees + 1 };
+      return { ...state, count: { ...state.count, coffees: state.count.coffees + 1 } };
     case 'EAT_SNACK':
-      return { ...state, snacks: state.count.snacks + 1 };
+      return { ...state, count: { ...state.count, snacks: state.count.snacks + 1 } };
     case 'TAKE_NAP':
-      return { ...state, naps: state.count.naps + 1 };
+      return { ...state, count: { ...state.count,  naps: state.count.naps + 1 } };
     case 'STUDY':
-      return { ...state, studies: state.count.studies + 1 };
+      return { ...state, count: { ...state.count, studies: state.count.studies + 1 } };
     default:
       return state;
   }

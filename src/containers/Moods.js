@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
-import actions from '../actions/actions';
+//import actions from '../actions/actions';
 import { getFace } from '../../src/selectors/selectors';
 
 const Moods = ({ count, handleSelection, }) => {
   const face = getFace(count);
+  
   // const controlActions = actions.map(action => ({
   //   ...action,
-  //   count: count[action.stateName]
+  //   // count: count[action.stateName]
   // }));
   return (
     <>
