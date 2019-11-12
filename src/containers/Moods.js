@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 import { getFace, getCoffeeCount, getSnackCount, getNapCount, getStudyCount } from '../selectors/selectors';
-import { drinkCoffee, eatSnack, takeNap, study } from '../actions/actions';
+import { drinkCoffee, eatSnack, takeNap, study, reset } from '../actions/actions';
 
 
 const Moods = ({ count, handleSelection }) => {
@@ -38,7 +38,8 @@ const inputFactoryMethod = {
   coffees: drinkCoffee(),
   snacks: eatSnack(),
   naps: takeNap(),
-  studies: study()
+  studies: study(),
+  reset: reset()
 };
 
 const mapDispatchToProps = dispatch => {

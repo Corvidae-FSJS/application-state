@@ -1,4 +1,4 @@
-import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY } from '../actions/actions';
+import { DRINK_COFFEE, EAT_SNACK, TAKE_NAP, STUDY, RESET } from '../actions/actions';
 
 const initialState = {
   count: {
@@ -20,6 +20,14 @@ export default function reducer(state = initialState, action) {
       return { ...state, count: { ...state.count,  naps: state.count.naps + 1 } };
     case STUDY:
       return { ...state, count: { ...state.count, studies: state.count.studies + 1 } };
+    case RESET:
+      return { ...state, count: {
+        ...state.count, 
+        coffees: state.count.coffees = 0,
+        snacks: state.count.snacks = 0,
+        naps: state.count.naps = 0,
+        studies: state.count.studies = 0 
+      } };
     default:
       return state;
   }

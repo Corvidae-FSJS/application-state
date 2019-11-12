@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Controls.css';
-import { drinkCoffee, eatSnack, takeNap, study } from '../../actions/actions';
+import { drinkCoffee, eatSnack, takeNap, study, reset } from '../../actions/actions';
 
 const Controls = ({ handleSelection, count }) => {
   
@@ -19,12 +19,16 @@ const Controls = ({ handleSelection, count }) => {
       <button key={study} onClick={() => handleSelection('studies')}>
       Study{!!count && `- ${count.studies}`}
       </button>
+      <button key={reset} onClick={() => handleSelection('reset')}>
+      Reset
+      </button>
     </section>
   );
 };
 
 Controls.propTypes = {
-  handleSelection: PropTypes.func.isRequired
+  handleSelection: PropTypes.func.isRequired,
+  count: PropTypes.shape(PropTypes.string.isRequired).isRequired,
 };
 
 export default Controls;
