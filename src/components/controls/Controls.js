@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Controls.css';
+import { actions } from '../../actions/actions';
 
-const Controls = ({ actions, handleSelection }) => (
+const Controls = ({ handleSelection }) => (
+  
   <section className={styles.Controls}>
     {actions.map(({ name, text, count }) => (
       <button key={name} onClick={() => handleSelection(name)}>
@@ -13,10 +15,7 @@ const Controls = ({ actions, handleSelection }) => (
 );
 
 Controls.propTypes = {
-  actions: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    text: PropTypes.string
-  })).isRequired,
+
   handleSelection: PropTypes.func.isRequired
 };
 

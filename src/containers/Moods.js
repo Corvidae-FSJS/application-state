@@ -1,25 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 import actions from '../actions/actions';
+import { getFace } from '../../src/selectors/selectors';
 
-const Moods = ({ actions, }) {
+const Moods = ({ count, handleSelection, }) => {
+  const face = getFace(count);
+  // const controlActions = actions.map(action => ({
+  //   ...action,
+  //   count: count[action.stateName]
+  // }));
+  return (
+    <>
+      <Controls  handleSelection={handleSelection}/>
+      <Face emoji={face} />
+    </>
+  );
+};
 
-  // render() {
-  //   const face = getFace(this.state);
-  //   const controlActions = actions.map(action => ({
-  //     ...action,
-  //     count: this.state[action.stateName]
-  //   }));
+Moods.propTypes = {
+  count: PropTypes.shape(PropTypes.string.isRequired).isRequired,
+  //face: PropTypes.string.isRequired,
+  handleSelection: PropTypes.func.isRequired
+};
 
-  const mapDispatchToProps = dispatch = ({
-    
-  })
+const mapStateToProps = state => ({
+  count: {
+    coffees: state.count.coffees,
+    snacks: state.count.snacks,
+    naps: state.count.naps,
+    studies: state.count.studies,
+  },
+  //face: getFace(state.count)
+});
 
-    return (
-      <>
-        <Controls actions={controlActions} handleSelection={this.handleSelection}/>
-        <Face emoji={face} />
-      </>
-    );
-}
+const mapDispatchToProps = dispatch => ({
+  handleSelection(name) {
+    dispatch({
+      type: name
+    });
+  },
+});
+
+const MoodsContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Moods);
+
+export default MoodsContainer;
