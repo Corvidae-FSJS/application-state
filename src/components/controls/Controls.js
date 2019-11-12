@@ -1,21 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Controls.css';
-import { actions } from '../../actions/actions';
+import { drinkCoffee, eatSnack, takeNap, study } from '../../actions/actions';
 
-const Controls = ({ handleSelection }) => (
+const Controls = ({ handleSelection, count }) => {
   
-  <section className={styles.Controls}>
-    {actions.map(({ name, text, count }) => (
-      <button key={name} onClick={() => handleSelection(name)}>
-        {text || name} {!!count && `- ${count}`}
+  return (
+    <section className={styles.Controls}>
+      <button key={drinkCoffee} onClick={() => handleSelection('coffees')}>
+      Drink Coffee {!!count && `- ${count.coffees}`}
       </button>
-    ))}
-  </section>
-);
+      <button key={eatSnack} onClick={() => handleSelection('snacks')}>
+      Eat Snack{!!count && `- ${count.snacks}`}
+      </button>
+      <button key={takeNap} onClick={() => handleSelection('naps')}>
+      Take Nap{!!count && `- ${count.naps}`}
+      </button>
+      <button key={study} onClick={() => handleSelection('studies')}>
+      Study{!!count && `- ${count.studies}`}
+      </button>
+    </section>
+  );
+};
 
 Controls.propTypes = {
-
   handleSelection: PropTypes.func.isRequired
 };
 
