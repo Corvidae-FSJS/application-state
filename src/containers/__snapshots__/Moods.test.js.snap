@@ -13,7 +13,9 @@ exports[`Moods container matches a snapshot 1`] = `
         "studies": 0,
       }
     }
+    handleSavedGame={[Function]}
     handleSelection={[Function]}
+    saved={Array []}
     store={
       Object {
         "dispatch": [Function],
