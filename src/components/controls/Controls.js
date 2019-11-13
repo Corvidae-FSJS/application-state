@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Controls.css';
-import { drinkCoffee, eatSnack, takeNap, study, reset } from '../../actions/actions';
+import { drinkCoffee, eatSnack, takeNap, study, reset, saveGame } from '../../actions/actions';
 
-const Controls = ({ handleSelection, count }) => {
+const Controls = ({ handleSelection, count, handleSavedGame }) => {
   
   return (
     <section className={styles.Controls}>
@@ -22,6 +22,9 @@ const Controls = ({ handleSelection, count }) => {
       <button key={reset} onClick={() => handleSelection('reset')}>
       Reset
       </button>
+      <button key={saveGame} onClick={() => handleSavedGame({ count })}>
+      Save Game
+      </button>
     </section>
   );
 };
@@ -29,6 +32,7 @@ const Controls = ({ handleSelection, count }) => {
 Controls.propTypes = {
   handleSelection: PropTypes.func.isRequired,
   count: PropTypes.shape(PropTypes.string.isRequired).isRequired,
+  handleSavedGame: PropTypes.func,
 };
 
 export default Controls;

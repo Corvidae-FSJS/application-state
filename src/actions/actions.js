@@ -23,13 +23,10 @@ export const reset = () => ({
   type: RESET
 });
 
+export const SAVE_GAME = 'SAVE_GAME';
+export const saveGame = (saved) => ({
+  type: SAVE_GAME,
+  payload: saved
+});
 
-//Old Code
-
-// export const actions = [
-//   { name: 'DRINK_COFFEE', text: 'Drink Coffee', stateName: 'coffees' },
-//   { name: 'EAT_SNACK', text: 'Snack', stateName: 'snacks' },
-//   { name: 'TAKE_NAP', text: 'Nap', stateName: 'naps' },
-//   { name: 'STUDY', text: 'Study', stateName: 'studies' },
-// ];
 
