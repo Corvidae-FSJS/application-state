@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Moods container matches a snapshot 1`] = `
+<ContextProvider
+  value={null}
+>
+  <Moods
+    count={
+      Object {
+        "coffees": 0,
+        "naps": 0,
+        "snacks": 0,
+        "studies": 0,
+      }
+    }
+    handleSelection={[Function]}
+    store={
+      Object {
+        "dispatch": [Function],
+        "getState": [Function],
+        "replaceReducer": [Function],
+        "subscribe": [Function],
+        Symbol(observable): [Function],
+      }
+    }
+  />
+</ContextProvider>
+`;
