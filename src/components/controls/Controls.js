@@ -22,7 +22,7 @@ const Controls = ({ handleSelection, count, handleSavedGame }) => {
       <button key={reset} onClick={() => handleSelection('reset')}>
       Reset
       </button>
-      <button key={saveGame} onClick={() => handleSavedGame({ count })}>
+      <button key={saveGame} onClick={() => handleSavedGame(count)}>
       Save Game
       </button>
     </section>
