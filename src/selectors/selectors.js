@@ -14,3 +14,9 @@ export const getFace = state => {
 
   return '😀';
 };
+
+export const getCoffeeCount = state => state.actionReducer.count.coffees;
+export const getSnackCount = state => state.actionReducer.count.snacks;
+export const getNapCount = state => state.actionReducer.count.naps;
+export const getStudyCount = state => state.actionReducer.count.studies;
+export const getSavedGame = state => state.saveGameReducer.saved;

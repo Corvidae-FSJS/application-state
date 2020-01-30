@@ -5,32 +5,65 @@ exports[`Controls component renders Controls 1`] = `
   className="Controls"
 >
   <button
-    key="DRINK_COFFEE"
+    key="function drinkCoffee() {
+  return {
+    type: DRINK_COFFEE
+  };
+}"
     onClick={[Function]}
   >
-    Drink Coffee
-     
+    Drink Coffee 
   </button>
   <button
-    key="EAT_SNACK"
+    key="function eatSnack() {
+  return {
+    type: EAT_SNACK
+  };
+}"
     onClick={[Function]}
   >
-    Snack
-     
+    Eat Snack
   </button>
   <button
-    key="TAKE_NAP"
+    key="function takeNap() {
+  return {
+    type: TAKE_NAP
+  };
+}"
     onClick={[Function]}
   >
-    Nap
-     
+    Take Nap
   </button>
   <button
-    key="STUDY"
+    key="function study() {
+  return {
+    type: STUDY
+  };
+}"
     onClick={[Function]}
   >
     Study
-     
+  </button>
+  <button
+    key="function reset() {
+  return {
+    type: RESET
+  };
+}"
+    onClick={[Function]}
+  >
+    Reset
+  </button>
+  <button
+    key="function saveGame(saved) {
+  return {
+    type: SAVE_GAME,
+    payload: saved
+  };
+}"
+    onClick={[Function]}
+  >
+    Save Game
   </button>
 </section>
 `;
